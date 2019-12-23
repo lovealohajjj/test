@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>scope</title>
+    <style>
+    </style>
+</head>
+
+<body>
+<style>
+    .menu-link {
+        padding:.3rem;
+        color:#ffff;
+        text-decoration: none;
+        background: dodgerblue;
+        list-style: none;;
+    }
+    .menu-active {
+        background: orange;
+    }
+</style>
+<nav class="menu">
+    <a href="#" class="menu-link" data-menu="1">menu 1</a>
+    <a href="#" class="menu-link" data-menu="2">menu 2</a>
+    <a href="#" class="menu-link" data-menu="3">menu 3</a>
+</nav>
+<script>
+    document.addEventListener("DOMContentLoaded", function(e){
+        // var link = document.querySelector(".box-title-spot a");
+        // link.classList.add('special', 'second');
+        // setTimeout(function() {
+        // 	link.classList.remove('left');
+        // },2000)
+        // alert(link.classList.contains('special'));
+        
+        // var spanElem = document.createElement('span');
+        // spanElem.innerHTML = '<em>lottemart</em>';
+        // link.appendChild(spanElem);
+
+        // var btn = document.querySelector('.btn');
+        // var mainTitle = document.querySelector('.box-title-spot');
+        
+        // function btnClickHandler(){
+        // 	mainTitle.style.background = 'dodgerblue';
+        // }
+        // btn.addEventListener('click', btnClickHandler);
+        
+        
+        var currentMenu; // 현재 활성화된 메뉴를 담을 변수
+        var menuLinks = document.querySelectorAll('.menu-link');
+        // function clickMenuHandler() {
+            // style 1 : jquery 스타일 (단점 : 쓸데없이 for문이 돈다.)
+            // for(var i = 0; i < menuLinks.length; i++) {
+            //     menuLinks[i].classList.remove('menu-active');
+            // }
+            // style 2 : (단점 : dom을 찾아야 가능 - 속도가 느리다.)
+            // var activeMenu = document.querySelector('.menu-active');
+            // if(activeMenu) {
+            //     activeMenu.classList.remove('menu-active');
+            // }
+            // style 3 
+        //     if(currentMenu) { // 최초 실행시 currentMenu 에러 방지
+        //         currentMenu.classList.remove('menu-active');
+        //     }
+        //     this.classList.add('menu-active');
+        //     currentMenu = this;
+
+        // }
+        // for(var i = 0; i < menuLinks.length; i++) {
+        //     menuLinks[i].addEventListener('click', clickMenuHandler);
+        // }
+        //style 4 
+        var menu = document.querySelector('.menu');
+        function clickHandler(e) {
+            if(currentMenu){
+                currentMenu.classList.remove('menu-active');
+            }
+            e.target.classList.add('menu-active');
+            currentMenu = e.target;
+        }
+        menu.addEventListener('click', clickHandler);
+    });
+</script>
+<script>
+    function prepareCake (flavor) {
+        return function () {
+            // Adding debugger
+            // debugger
+            setTimeout(_ => console.log(`Made a ${flavor} cake!`), 1000);
+        }
+    }
+
+    const makeCakeLater = prepareCake('banana');
+    makeCakeLater();
+</script>
+</body>
+</html>

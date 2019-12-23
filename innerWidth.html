@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>test</title>
+    <style>
+        #test {
+            border: 50px solid black;
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            padding: 20px;
+            background-color:skyblue;
+            background-clip:content-box;
+            overflow-x: scroll;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test">
+      border:50px solid black; width:200px; height:100px; margin:10px; padding:20px;
+      <br>
+      <br>
+LoremIpsumissimplydummytextoftheprintingandtypesettingindustry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </div>
+    <span>offsetHeight 결과는</span><div id="offsetheight"></div>
+    <hr>
+    <span>offsetWidth 결과는</span><div id="offsetwidth"></div>
+    <hr>
+    <span>clientHeight 결과는</span><div id="clientheight"></div>
+    <hr>
+    <span>clientWidth 결과는</span><div id="clientwidth"></div>
+    <hr>
+    <span>scrollHeight 결과는</span><div id="scrollheight"></div>
+    <hr>
+    <span>scrollWidth 결과는</span><div id="scrollwidth"></div>
+    <script>
+        var ele = document.querySelector("#test");
+        var div1 = document.querySelector("#offsetheight");
+        var div2 = document.querySelector("#offsetwidth");
+        var div3 = document.querySelector("#clientheight");
+        var div4 = document.querySelector("#clientwidth");
+        var div5 = document.querySelector("#scrollheight");
+        var div6 = document.querySelector("#scrollwidth");
+      
+        var offsetHeight = ele.offsetHeight;
+        var offsetWidth = ele.offsetWidth;
+        var clientHeight = ele.clientHeight
+        var clientWidth = ele.clientWidth
+        var scrollHeight = ele.scrollHeight
+        var scrollWidth = ele.scrollWidth
+        
+        div1.innerHTML = offsetHeight;
+        div2.innerHTML = offsetWidth;
+        div3.innerHTML = clientHeight;
+        div4.innerHTML = clientWidth;
+        div5.innerHTML = scrollHeight;
+        div6.innerHTML = scrollWidth;
+    </script>
+
+    <script>
+        document.write(document.URL);
+        document.write(document.title);
+        document.writeln('<script>document.write("Hello")<\/script>');
+    </script>
+</body>
+</html>
